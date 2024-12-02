@@ -42,7 +42,10 @@ const Login = () => {
             className="px-4 py-2 w-full border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Password"
           />
+          
+
         </div>
+        {/* <button>eye</button> */}
 
         <div className="flex items-center justify-between mt-4">
           <label className="flex items-center text-gray-600">
@@ -64,21 +67,15 @@ const Login = () => {
 
         <div className="mt-6">
           <button type="submit" className="bg-blue-600 text-white p-3 w-full rounded-lg
-          
-          
-          
-          
-          
-          
-          
+         
           text-xl text-center font-geist">
             Sign in
           </button>
         </div>
 
-        <div className="mt-6">
+        {/* <div className="mt-6">
           <h1 className="text-red-500 font-geist font-xl">Error message will appear here</h1>
-        </div>
+        </div> */}
         
         <div>
           <p className="font-geist text-gray-400 font-sm text-center mt-2">
