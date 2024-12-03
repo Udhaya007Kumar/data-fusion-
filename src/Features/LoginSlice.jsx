@@ -16,8 +16,28 @@ export const loginSlice = createSlice({ // Corrected the function name
     },
   },
   extraReducers: (builder) => {
-    builder
-      // .addCase(loginuser.pending, (state) => { // Corrected the action name
+    builder.addCase(loginuser.pending, (state) => {
+      state.loading = true;
+      state.error = null;
+    })
+    builder.addCase(loginuser.fulfilled, (state, action) => {
+      state.loading = false;  
+      state.user = action.payload;
+    })
+    .addCase(loginuser.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
+    })
+     
+  },
+});
+
+export const { logout } = loginSlice.actions;
+
+export default loginSlice.reducer;
+
+
+ // .addCase(loginuser.pending, (state) => { // Corrected the action name
       //   state.loading = true;
       //   state.error = null;
       // })
@@ -29,9 +49,3 @@ export const loginSlice = createSlice({ // Corrected the function name
       //   state.loading = false;
       //   state.error = action.error.message;
       // });
-  },
-});
-
-export const { logout } = loginSlice.actions;
-
-export default loginSlice.reducer;

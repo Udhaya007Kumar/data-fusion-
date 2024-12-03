@@ -1,6 +1,21 @@
 import React, { useState } from "react";
+import { useDispatch,useSelector } from "react-redux";
+import { loginuser } from "../Features/LoginThunk";
+
+
 
 const Login = () => {
+  const dispatch = useDispatch();
+
+  const loading = useSelector((state) => state.login.loading);
+  const error = useSelector((state) => state.login.error);
+  const user = useSelector((state) => state.login.user);
+
+  console.log(user);
+  
+
+
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [rememberMe, setRememberMe] = useState(false);
@@ -8,6 +23,9 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email:", email, "Password:", password);
+    console.log("Remember Me:", rememberMe);
+    dispatch(loginuser({ email, password }));
+
   };
   return (
     <div>
@@ -72,6 +90,22 @@ const Login = () => {
             Sign in
           </button>
         </div>
+
+        {/* {
+          loading ? (
+            <div className="flex items-center justify-center mt-4">
+              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-500"></div>
+            </div>
+          ) : null
+        } */}
+
+        {/* {
+          error ? (
+            <div className="mt-6">
+              <h1 className="text-red-500 font-geist font-xl">Error message will appear here</h1>
+            </div>
+          ) : null
+        } */}
 
         {/* <div className="mt-6">
           <h1 className="text-red-500 font-geist font-xl">Error message will appear here</h1>
