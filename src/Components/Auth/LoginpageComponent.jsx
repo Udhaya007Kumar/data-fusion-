@@ -63,7 +63,7 @@ const LoginpageComponent = () => {
                 />
                 <Label htmlFor="rememberMe">Remember me</Label>
               </div>
-
+             
               {/* Submit Button */}
               <Button type="submit">Sign In with Email</Button>
             </div>
@@ -73,10 +73,11 @@ const LoginpageComponent = () => {
             Or continue with
           </span>
         </div>
-        <div className='grid mt-5 font-geist text-start'>
-        <Button className="text-start" variant="outline"  type="button">Google</Button>
-        <Button className="text-start" variant="outline"  type="button">Microsoft</Button>
-        <Button variant="outline"  type="button">Apple</Button>
+        <div className='grid mt-5 font-geist text-start gap-3'>
+        <Button className="text-start hover:underline font-geist" variant="outline"  type="button">Google</Button>
+        <Button className="text-start hover:underline font-geist" variant="outline"  type="button">Microsoft</Button>
+        <Button className="text-start hover:underline font-geist" variant="outline"  type="button">Apple</Button>
+        
         </div>       
          </div>
   
