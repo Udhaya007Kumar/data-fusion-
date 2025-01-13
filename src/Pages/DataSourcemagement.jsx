@@ -4,23 +4,21 @@ import Navbar from '../Components/layouts/Navbar';
 import { Button } from '@/components/ui/button';
 import { Label } from '@/components/ui/label';
 import { Input } from '@/components/ui/input';
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
-
 import { ComboboxDemo } from '../Components/layouts/ComboboxDemo';
-import { Switch } from "@/components/ui/switch"
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 
-  
-  
 
-const ConnectionMangScreen = () => {
+
+const DataSourcemagement = () => {
     return (
       <div>
         <div className="flex flex-shrink ">
@@ -28,25 +26,17 @@ const ConnectionMangScreen = () => {
           <div className="w-screen  flex flex-col">
             <Navbar />
 
-            {/* contaninerr */}
-            <div className="flex flex-col lg:flex-row gap-4 p-4">
-              {/* Connections List */}
-              <div className="w-full lg:w-1/3  pr-4 ">
-                <div className="flex justify-between items-center mb-4 ">
-                  <h2 className="font-semibold text-lg font-geist">
-                    Connections
-                  </h2>
-                  <Button>+ Add</Button>
-                </div>
+            <div className="container mx-auto">
+              <h1 className="font-geist text-2xl">Exiting Sources</h1>
 
-                
-                <div className="grid grid-flow-row gap-4 mt-8">
+              <div >
+                <div className="grid grid-flow-row gap-4 mt-8 m-4 md:w-1/2">
                   <div className="space-y-4 border border-gray-300 rounded-xl">
                     {/* Example Connection */}
                     <div className="p-3 bg-gray-100 rounded-lg">
                       <div className="bg-white shadow-md rounded-lg p-4 w-full">
                         <div className="flex flex-col sm:flex-row sm:items-center font-geist">
-                          <div className="mr-7">
+                          {/* <div className="mr-7">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
@@ -63,18 +53,18 @@ const ConnectionMangScreen = () => {
                               <path d="M3 5V19A9 3 0 0 0 21 19V5" />
                               <path d="M3 12A9 3 0 0 0 21 12" />
                             </svg>
-                          </div>
+                          </div> */}
                           <div className="flex-grow">
                             <div className="text-lg sm:text-xl font-semibold">
-                              Production Database
+                              oracle Production DB
                             </div>
                             <div className="text-sm sm:text-base text-gray-600 mt-2 sm:mt-0">
-                              2024-03-15
+                              Oracle
                             </div>
                           </div>
                           <div className="flex mt-4 sm:mt-0 gap-3 sm:gap-5">
                             {/* Icons */}
-                            <svg
+                            {/* <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
                               height="24"
@@ -88,7 +78,7 @@ const ConnectionMangScreen = () => {
                             >
                               <circle cx="12" cy="12" r="10" />
                               <path d="m9 12 2 2 4-4" />
-                            </svg>
+                            </svg> */}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
@@ -134,7 +124,7 @@ const ConnectionMangScreen = () => {
                     <div className="p-3 bg-gray-100 rounded-lg">
                       <div className="bg-white shadow-md rounded-lg p-4 w-full">
                         <div className="flex flex-col sm:flex-row sm:items-center font-geist">
-                          <div className="mr-7">
+                          {/* <div className="mr-7">
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
@@ -153,18 +143,18 @@ const ConnectionMangScreen = () => {
                               <path d="M16 13H8" />
                               <path d="M16 17H8" />
                             </svg>
-                          </div>
+                          </div> */}
                           <div className="flex-grow">
                             <div className="text-lg sm:text-xl font-semibold">
-                              File Storage
+                              Analytics PostgreSQL
                             </div>
                             <div className="text-sm sm:text-base text-gray-600 mt-2 sm:mt-0">
-                              2024-03-15
+                              PostgreSQL
                             </div>
                           </div>
                           <div className="flex mt-4 sm:mt-0 gap-3 sm:gap-5">
                             {/* Icons */}
-                            <svg
+                            {/* <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
                               height="24"
@@ -178,7 +168,7 @@ const ConnectionMangScreen = () => {
                             >
                               <circle cx="12" cy="12" r="10" />
                               <path d="m9 12 2 2 4-4" />
-                            </svg>
+                            </svg> */}
                             <svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="24"
@@ -220,123 +210,57 @@ const ConnectionMangScreen = () => {
                     </div>
                   </div>
                 </div>
-
-
-
-
               </div>
-              {/* connectionDetails */}
-              <div className=" md:ml-8 mt-2">
-                <h2 className="font-semibold text-lg font-geist">
-                  Connection Details
-                </h2>
-                
-                <div className="mt-10   w-full sm:w-[400px] font-geist">
-                  <form className="space-y-4">
-                    {/* Name Field */}
-                    
-                    <div className="w-full  ">
-                      <Label
-                        htmlFor="connectiontype"
-                        className="block text-lg  text-gray-700"
-                      >
-                        Connection Type
-                      </Label>
-                      <div className='mt-2 '>
-                      <ComboboxDemo  />
-                      </div>                    
-                    </div>
 
-
-                    
-                    <div className='w-full flex gap-7'>
-                      <div>
-                      <Label
-                        htmlFor="Hostname"
-                        className="block text-lg  text-gray-700"
-                      >
-                       Hostname
-                      </Label>
-                      <Input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your name"
-                        className="mt-2 "
-                      />
-                      </div>
-                      <div>
-                      <Label
-                        htmlFor="Port"
-                        className="block text-lg  text-gray-700"
-                      >
-                        Port
-                      </Label>
-                      <div className='mt-2'>
-                        <ComboboxDemo />
-                      </div>
-                      </div>
-                    </div>
-                    <div className="w-full ">
-                      <Label
-                        htmlFor="DatabaseName"
-                        className="block text-lg  text-gray-700"
-                      >
-                        Database Name
-                      </Label>
-                      <Input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your name"
-                        className="mt-2 "
-                      />
-                    </div>
-
-                    {/* Credentials */}
-                    <div className='w-full flex gap-7'>
-                      <div>
-                      <Label
-                        htmlFor="connectiontype"
-                        className="block text-lg  text-gray-700"
-                      >
-                        Credentials
-                      </Label>
-                      <Input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Username"
-                        className="mt-2 "
-                      />
-                      </div>
-                      <div>              
-                      <Input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Password"
-                        className="mt-9"
-                      />
-                      </div>
-                    </div>
-                    <div className='flex justify-between'>
-                      <Label>Firewall Rules</Label>
-                      <Switch />
-                    </div>
-                    {/* Submit Button */}
-                    <div>
-                      <Button type="submit" className="w-full font-geist ">
-                        Test Connection
-                      </Button>
-                    </div>
-                  </form>
+              <div className="mt-5">
+                <h1 className="font-geist text-2xl">Add New Source</h1>
                 </div>
 
+                <div className="flex flex-col rounded-xl w-full sm:w-1/2 p-4  bg-white shadow-md">
+  <div className="flex flex-col sm:flex-row gap-5">
+    <div className="flex-grow">
+     <Select>
+  <SelectTrigger className="w-[180px]">
+    <SelectValue placeholder="Theme" />
+  </SelectTrigger>
+  <SelectContent>
+    <SelectItem value="light">Light</SelectItem>
+    <SelectItem value="dark">Dark</SelectItem>
+    <SelectItem value="system">System</SelectItem>
+  </SelectContent>
+</Select>
+    </div>
+    <div className="flex-grow">
+      <Input 
+        
+       
+      />
+    </div>
+    <div className="flex-grow">
+      <Input 
+        
+         
+      />
+    </div>
+  </div>
+</div>
 
 
-                
+
+
+              
+
+
+
+
+              
+
+              <div className="mt-5 w-full" >
+                <Button>Add Source</Button>
               </div>
+
+
+
             </div>
           </div>
         </div>
@@ -344,4 +268,4 @@ const ConnectionMangScreen = () => {
     );
 };
 
-export default ConnectionMangScreen;
+export default DataSourcemagement;

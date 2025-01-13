@@ -25,10 +25,19 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="text-sm font-medium transition-colors hover:text-primary">
-              <Link to="/about">About</Link>
+              <Link to="/connectionmang">Connections Management</Link>
             </li>
             <li className="text-sm font-medium transition-colors hover:text-primary">
-              <Link to="/contact">Contact</Link>
+              <Link to="/Projectdetails">Projectdetails</Link>
+            </li>
+            <li className="text-sm font-medium transition-colors hover:text-primary">
+              <Link to="/sourceselection">Sourceselection</Link>
+            </li>
+            <li className="text-sm font-medium transition-colors hover:text-primary">
+              <Link to="/DataSourcemagement">DataSourceManagement</Link>
+            </li>
+            <li className="text-sm font-medium transition-colors hover:text-primary">
+              <Link to="/loginv1">Login</Link>
             </li>
           </ul>
         </div>
@@ -72,10 +81,19 @@ const Navbar = () => {
               <Link to="/">Home</Link>
             </li>
             <li className="text-sm font-medium transition-colors hover:text-primary">
-              <Link to="/about">About</Link>
+              <Link to="/connectionmang">Connections Management</Link>
             </li>
             <li className="text-sm font-medium transition-colors hover:text-primary">
-              <Link to="/contact">Contact</Link>
+              <Link to="/Projectdetails">Projectdetails</Link>
+            </li>
+            <li className="text-sm font-medium transition-colors hover:text-primary">
+              <Link to="/sourceselection">Sourceselection</Link>
+            </li>
+            <li className="text-sm font-medium transition-colors hover:text-primary">
+              <Link to="/DataSourcemagement">DataSourceManagement</Link>
+            </li>
+            <li className="text-sm font-medium transition-colors hover:text-primary">
+              <Link to="/loginv1">Login</Link>
             </li>
           </ul>
           <div className="mt-4 flex gap-5">

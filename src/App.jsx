@@ -11,6 +11,9 @@ import { Page } from "./Components/layouts/Sidebar/page";
 import ConnectionMangScreen from "./Pages/ConnectionMangScreen";
 import CloudInfrastructure from "./Pages/CloudInfrastructure";
 import ProjectDetails from "./Pages/ProjectDetails";
+import NotfoundPage from "./Pages/NotfoundPage";
+import SourceSelection from "./Pages/SourceSelection";
+import DataSourcemagement from "./Pages/DataSourcemagement";
 
 
 
@@ -27,7 +30,10 @@ function App() {
             <Route path="/loginv1" element={<Login_v1 />} />
             <Route path="/connectionmang" element={<ConnectionMangScreen />} />
             <Route path="/cloudinfrastructure" element={<CloudInfrastructure />} />
-            <Route path="/projectdrtails" element={<ProjectDetails/>} />
+            <Route path="/Projectdetails" element={<ProjectDetails/>} />
+            <Route path="/sourceselection" element={<SourceSelection/>} />   
+            <Route path="/DataSourcemagement" element={<DataSourcemagement/>} />      
+            <Route path="*" element={<NotfoundPage />} />
           </Routes>
         </BrowserRouter>
       </ThemeProvider>

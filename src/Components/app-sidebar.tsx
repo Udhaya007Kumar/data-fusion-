@@ -56,15 +56,15 @@ const data = {
       isActive: true,
       items: [
         {
-          title: "History",
+          title: "Project details section",
           url: "#",
         },
         {
-          title: "Starred",
+          title: "Source selection",
           url: "#",
         },
         {
-          title: "Settings",
+          title: "Target configuration",
           url: "#",
         },
       ],
@@ -76,7 +76,7 @@ const data = {
       items: [
         {
           title: "Genesis",
-          url: "#",
+          url: "/projectdrtails",
         },
         {
           title: "Explorer",

@@ -9,10 +9,8 @@ const CloudInfrastructure = () => {
           <Page />
           <div className="w-screen  flex flex-col">
             <Navbar />
-            <div className="container mx-auto">
-               
+            <div className="container mx-auto">           
             </div>
-
             </div>
             </div>
         </div>

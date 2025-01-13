@@ -50,7 +50,7 @@ const ProjectDetails = () => {
                 </div>
 
                 <div className='flex justify-end mr-3'>
-                    <Button>Next
+                    <Button className='mt-5 w-full md:w-1/4 ' >Next
                         <span className='ml-2 text-lg'><FaLongArrowAltRight /></span>
                     </Button>
                 </div>                 
