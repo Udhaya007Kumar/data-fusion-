@@ -6,8 +6,6 @@ import Login_v1 from "./Pages/Login_v1";
 
 import Home from "./Pages/Home";
 import { ThemeProvider } from "@/components/theme-provider"
-import Navbar from './Components/layouts/Navbar';
-import { Page } from "./Components/layouts/Sidebar/page";
 import ConnectionMangScreen from "./Pages/ConnectionMangScreen";
 import CloudInfrastructure from "./Pages/CloudInfrastructure";
 import ProjectDetails from "./Pages/ProjectDetails";
