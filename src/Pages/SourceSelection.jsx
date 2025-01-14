@@ -5,7 +5,7 @@ import { Input } from '../Components/ui/input';
 import { Label } from '../Components/ui/label';
 import { ComboboxDemo } from '../Components/layouts/ComboboxDemo';
 import { Button } from '../Components/ui/button';
-import { FaLongArrowAltRight } from "react-icons/fa";
+
 import {
   Table,
   TableBody,

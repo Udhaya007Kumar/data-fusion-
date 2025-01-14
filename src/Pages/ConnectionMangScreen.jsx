@@ -1,20 +1,20 @@
 import React from 'react';
 import { Page } from '../Components/layouts/Sidebar/page';
 import Navbar from '../Components/layouts/Navbar';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-  } from "@/components/ui/card"
+import { Button } from '../Components/ui/button';
+import { Label } from '../Components/ui/label';
+import { Input } from '../Components/ui/input';
+// import {
+//     Card,
+//     CardContent,
+//     CardDescription,
+//     CardFooter,
+//     CardHeader,
+//     CardTitle,
+//   } from "/components/ui/card"
 
 import { ComboboxDemo } from '../Components/layouts/ComboboxDemo';
-import { Switch } from "@/components/ui/switch"
+import { Switch } from "../Components/ui/switch"
 
 
   

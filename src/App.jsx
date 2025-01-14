@@ -5,7 +5,7 @@ import Login from "./Pages/Login";
 import Login_v1 from "./Pages/Login_v1";
 
 import Home from "./Pages/Home";
-import { ThemeProvider } from "@/components/theme-provider"
+import { ThemeProvider } from "./Components/theme-provider"
 import ConnectionMangScreen from "./Pages/ConnectionMangScreen";
 import CloudInfrastructure from "./Pages/CloudInfrastructure";
 import ProjectDetails from "./Pages/ProjectDetails";

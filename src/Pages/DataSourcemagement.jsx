@@ -1,10 +1,8 @@
 import React from 'react';
 import { Page } from '../Components/layouts/Sidebar/page';
 import Navbar from '../Components/layouts/Navbar';
-import { Button } from '@/components/ui/button';
-import { Label } from '@/components/ui/label';
-import { Input } from '@/components/ui/input';
-import { ComboboxDemo } from '../Components/layouts/ComboboxDemo';
+import { Button } from '../Components/ui/button';
+import { Input } from '../Components/ui/input';
 import {
   Select,
   SelectContent,
@@ -13,7 +11,7 @@ import {
   SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "../Components/ui/select"
 
 
 
