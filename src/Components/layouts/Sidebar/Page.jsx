@@ -7,7 +7,7 @@ import {
   SidebarTrigger,
 } from "../../ui/sidebar"
 
-export function Page() {
+export const  Page =()=> {
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -17,4 +17,4 @@ export function Page() {
       </SidebarInset>
     </SidebarProvider>
   )
-}
+};
