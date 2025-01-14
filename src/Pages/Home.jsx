@@ -11,7 +11,7 @@ import {
   import Navbar from '../Components/layouts/Navbar';
   import { Button } from '../Components/ui/button'
   import { Progress } from "../Components/ui/progress"
-  import{ Page } from "../Components/layouts/Sidebar/Page"
+  import { Page } from '../Components/layouts/Sidebar/Page.jsx';
 
 
 
