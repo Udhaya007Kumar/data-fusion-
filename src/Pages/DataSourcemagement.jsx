@@ -1,5 +1,5 @@
 import React from 'react';
-import { Page } from '../Components/layouts/Sidebar/page';
+import { Page } from '../Components/layouts/Sidebar/Page';
 import Navbar from '../Components/layouts/Navbar';
 import { Button } from '../Components/ui/button';
 import { Input } from '../Components/ui/input';
