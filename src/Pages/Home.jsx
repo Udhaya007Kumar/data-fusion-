@@ -6,11 +6,11 @@ import {
     CardFooter,
     CardHeader,
     CardTitle,
-  } from "@/components/ui/card"
+  } from "../Components/ui/card"
 
   import Navbar from '../Components/layouts/Navbar';
-  import { Button } from '@/components/ui/button';
-  import { Progress } from "@/components/ui/progress"
+  import { Button } from '../Components/ui/button'
+  import { Progress } from "../Components/ui/progress"
   import{ Page } from "../Components/layouts/Sidebar/Page"
 
 
