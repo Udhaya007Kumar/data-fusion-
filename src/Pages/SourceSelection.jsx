@@ -14,8 +14,8 @@ import {
   TableHead,
   TableHeader,
   TableRow,
-} from "@/components/ui/table"
-import { Checkbox } from "@/components/ui/checkbox"
+} from "../Components/ui/table"
+import { Checkbox } from "../Components/ui/checkbox"
 
 const SourceSelection = () => {
     return (
