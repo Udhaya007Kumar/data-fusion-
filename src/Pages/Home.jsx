@@ -12,7 +12,7 @@ import {
   import { Button } from '@/components/ui/button';
   import { Progress } from "@/components/ui/progress"
   // import { Page } from "../Components/layouts/Sidebar/page"
-  import{Page} from "../Components/layouts/Sidebar/Page"
+  import{ Page } from "../Components/layouts/Sidebar/Page"
 
 
 
