@@ -26,10 +26,10 @@ const ConnectionMangScreen = () => {
         <div className="flex flex-shrink ">
           <Page />
           <div className="w-screen  flex flex-col">
-            <Navbar />
+            {/* <Navbar /> */}
 
             {/* contaninerr */}
-            <div className="flex flex-col lg:flex-row gap-4 p-4">
+            <div className="flex flex-col lg:flex-row gap-4 p-4 mt-12">
               {/* Connections List */}
               <div className="w-full lg:w-1/3  pr-4 ">
                 <div className="flex justify-between items-center mb-4 ">

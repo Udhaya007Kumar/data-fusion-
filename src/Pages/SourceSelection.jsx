@@ -23,9 +23,9 @@ const SourceSelection = () => {
         <div className="flex flex-shrink ">
           <Page />
           <div className="w-screen  flex flex-col">
-            <Navbar />
+            {/* <Navbar /> */}
 
-            <div className="container mx-auto">
+            <div className="container mx-auto mt-12 ">
               <h1 className="font-geist text-2xl">Source selection</h1>
 
               <div className="flex   bg-gray-100 mr-5">

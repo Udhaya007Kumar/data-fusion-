@@ -24,7 +24,7 @@ const Home = () => {
       <div className='flex flex-shrink '>
         <Page />
         <div className="w-screen  flex flex-col">
-          <Navbar />
+          {/* <Navbar /> */}
           <div className="p-4 container mx-auto flex flex-col gap-6 mt-5 md:flex-row md:gap-6  ">
             <div className="w-full md:w-1/3">
               <Card className="p-4 ">

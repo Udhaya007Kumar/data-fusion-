@@ -22,9 +22,9 @@ const DataSourcemagement = () => {
         <div className="flex flex-shrink ">
           <Page />
           <div className="w-screen  flex flex-col">
-            <Navbar />
+            {/* <Navbar /> */}
 
-            <div className="container mx-auto">
+            <div className="container mx-auto mt-12">
               <h1 className="font-geist text-2xl">Exiting Sources</h1>
 
               <div >
