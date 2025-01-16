@@ -34,7 +34,7 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
+      name: "LINGA Tech",
       logo: GalleryVerticalEnd,
       plan: "Enterprise",
     },
@@ -51,88 +51,70 @@ const data = {
   ],
   navMain: [
     {
-      title: "Projects",
+      title: "Worksspace",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "ConnectionManagement",
+          title:"General",
           url: "/connectionmang",
         },
         {
-          title: "Projectdetils",
-          url: "Projectdetails",
+          title: "Permissions",
+          url: "/",
         },
         {
-          title: "Sourceselection",
-          url: "/sourceselection",
+          title: "Storage",
+          url: "/",
         },
         {
-          title: "DataSourceManagement",
+          title: "Data Sources",
           url: "/DataSourcemagement",
         },
+        {
+          title: "Integrations",
+          url: "/DataSourcemagement",
+        },
+        {
+          title: "Datasets",
+          url: "/DataSourcemagement",
+        },
+        {
+          title: "Permission Groups",
+          url: "/DataSourcemagement",
+        },
+        {
+          title: "API Keys",
+          url: "/DataSourcemagement",
+        },
+        {
+          title: "Embedded Analytics",
+          url: "/DataSourcemagement",
+        },
+        {
+          title: "Billing",
+          url: "/DataSourcemagement",
+        },
+        
       ],
-    }
-    // {
-    //   title: "Models",
-    //   url: "#",
-    //   icon: Bot,
-    //   items: [
-    //     {
-    //       title: "Genesis",
-    //       url: "/projectdrtails",
-    //     },
-    //     {
-    //       title: "Explorer",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Quantum",
-    //       url: "#",
-    //     },
-    //   ],
-    // },
-    // {
-    //   title: "Documentation",
-    //   url: "#",
-    //   icon: BookOpen,
-    //   items: [
-    //     {
-    //       title: "Introduction",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Get Started",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Tutorials",
-    //       url: "#",
-    //     },
-    //     {
-    //       title: "Changelog",
-    //       url: "#",
-    //     },
-    //   ],
-    // },
-    
+    }   
   ],
   projects: [
-    // {
-    //   name: "Design Engineering",
-    //   url: "#",
-    //   icon: Frame,
-    // },
-    // {
-    //   name: "Sales & Marketing",
-    //   url: "#",
-    //   icon: PieChart,
-    // },
-    // {
-    //   name: "Travel",
-    //   url: "#",
-    //   icon: Map,
-    // },
+    {
+      name: "Profile",
+      url: "#",
+      icon: Frame,
+    },
+    {
+      name: "Preferences",
+      url: "#",
+      icon: PieChart,
+    },
+    {
+      name: "Notification",
+      url: "#",
+      icon: Map,
+    },
   ],
 }
 
@@ -144,7 +126,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
+         <NavProjects projects={data.projects} /> 
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
