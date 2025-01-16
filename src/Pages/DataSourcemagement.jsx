@@ -9,7 +9,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
+} from "../Components/ui/select"
 
 import {
   Card,
@@ -18,14 +18,14 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
+} from "../Components/ui/card"
 
 import {
   InputOTP,
   InputOTPGroup,
   InputOTPSeparator,
   InputOTPSlot,
-} from "@/components/ui/input-otp"
+} from "../Components/ui/input-otp"
 
 
 const DataSourcemagement = () => {
@@ -108,8 +108,7 @@ const DataSourcemagement = () => {
                     <InputOTPSlot index={3} />
                     <InputOTPSlot index={4} />
                     
-      
-       
+
       </InputOTPGroup>
       <InputOTPSeparator />
       <InputOTPGroup>
@@ -126,7 +125,6 @@ const DataSourcemagement = () => {
       <InputOTPSlot index={13} />
       <InputOTPSlot index={14} />
     </InputOTP>
-
             </div>
             
           </div>
@@ -135,19 +133,9 @@ const DataSourcemagement = () => {
         <Button>Connect</Button>
         </CardFooter>
       </Card>
-      
            </div>
           </div>
 
-
-
-          
-            
-       
-          
-
-          
-          
         </div>
       </div>
     );
