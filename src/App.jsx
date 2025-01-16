@@ -18,7 +18,7 @@ import DataSourcemagement from "./Pages/DataSourcemagement";
 function App() {
   return (
     <div>
-      <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+      <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
         <BrowserRouter>
            {/* <Page />  */}
           <Routes>

@@ -34,7 +34,7 @@ const data = {
   },
   teams: [
     {
-      name: "LINGA Tech",
+      name: "Quantum",
       logo: GalleryVerticalEnd,
       plan: "Enterprise",
     },
