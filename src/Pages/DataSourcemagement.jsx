@@ -20,12 +20,7 @@ import {
   CardTitle,
 } from "../Components/ui/card"
 
-import {
-  InputOTP,
-  InputOTPGroup,
-  InputOTPSeparator,
-  InputOTPSlot,
-} from "../Components/ui/input-otp"
+import { Separator } from "@/components/ui/separator"
 
 
 const DataSourcemagement = () => {
@@ -59,7 +54,9 @@ const DataSourcemagement = () => {
           Username & Password
           </Label>
           <Input id="Username" type="text" placeholder="Username" className="w-full sm:flex-1" />
+          <div className='flex gap-1'>
           <Input id="Password" type="Password" placeholder='Password' className="w-full sm:flex-1" />
+          </div>
         </div>
         <div className="border border-gray-400 p-5 flex gap-6 justify-evenly">
           <Label htmlFor="dataSourceName" className="text-sm font-medium min-w-[120px] mt-2">
@@ -78,23 +75,22 @@ const DataSourcemagement = () => {
           SSH
           </Label>
           <Input id="SSH" type="text" placeholder="Do not use SSH credentials" className="w-full sm:flex-1" />
-        </div>
-        
-
-        
+        </div>        
         <div className="mt-6 border border-gray-400 p-5">
           <h1 className="font-geist font-medium">If you would like to whitelist our IP addresses, they are:</h1>
           <div className="mt-2">
-            <InputOTP maxLength={15}>
-              <InputOTPGroup>
-                <InputOTPSlot index={0} />
-                <InputOTPSlot index={1} />
-                
-              </InputOTPGroup>
-              <InputOTPSeparator />
-              
-            </InputOTP>
-          </div>
+          <div className="flex items-center gap-4 border border-gray-400 p-3">
+        <span>44.219.39.124</span>
+        <div className="w-px h-6 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
+        <span>34.230.173.35</span>
+        <div className="w-px h-6 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
+        <span>100.26.25.127</span>
+      </div>
+            
+         
+            
+          
+                   </div>
         </div>
       </CardContent>
       <CardFooter className="items-end justify-end">
@@ -102,13 +98,10 @@ const DataSourcemagement = () => {
       </CardFooter>
     </Card>
   </div>
-</div>
-
-          
+</div>    
         </div>
       </div>
     );
 };
 
-export default DataSourcemagement;
-
+export default DataSourcemagement
