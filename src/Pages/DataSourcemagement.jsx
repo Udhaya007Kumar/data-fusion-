@@ -19,7 +19,7 @@ import {
   CardHeader,
   CardTitle,
 } from "../Components/ui/card"
-import { Badge } from "../Components/ui/badge"
+import { Badge } from "../Components/ui/badge.js"
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
