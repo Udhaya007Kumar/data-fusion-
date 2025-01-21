@@ -91,8 +91,7 @@ const DataSourcemagement = () => {
                       className="text-sm font-medium min-w-[120px] mt-2"
                     >
                       DataSource name
-                    </Label>
-                   
+                    </Label>                  
                     <Input
                       id="dataSourceName"
                       type="text"
@@ -227,7 +226,6 @@ const DataSourcemagement = () => {
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
-          <SelectLabel>Fruits</SelectLabel>
           <SelectItem value='SSHauthentication'>Working with SSH authentication settings?</SelectItem>
            <SelectItem value="interface">Trying to disable certain click options or buttons in an interface?</SelectItem>
           <SelectItem value="securityissue">Dealing with a specific SSH-related security issue?</SelectItem>
