@@ -11,6 +11,7 @@ import ProjectDetails from "./Pages/ProjectDetails";
 import NotfoundPage from "./Pages/NotfoundPage";
 import SourceSelection from "./Pages/SourceSelection";
 import DataSourcemagement from "./Pages/DataSourcemagement";
+import DataSet from "./Pages/DataSet";
 
 
 
@@ -29,7 +30,9 @@ function App() {
             {/* <Route path="/cloudinfrastructure" element={<CloudInfrastructure />} /> */}
             <Route path="/Projectdetails" element={<ProjectDetails/>} />
             <Route path="/sourceselection" element={<SourceSelection/>} />   
-            <Route path="/DataSourcemagement" element={<DataSourcemagement/>} />      
+            <Route path="/DataSourcemagement" element={<DataSourcemagement/>} />
+            <Route path="/dataset" element={<DataSet/>} />
+                  
             <Route path="*" element={<NotfoundPage />} />
           </Routes>
         </BrowserRouter>

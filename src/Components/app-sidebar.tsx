@@ -77,7 +77,7 @@ const data = {
         },
         {
           title: "Datasets",
-          url: "/DataSourcemagement",
+          url: "/dataset",
         },
         {
           title: "Permission Groups",

@@ -38,8 +38,6 @@ const ConnectionMangScreen = () => {
                   </h2>
                   <Button>+ Add</Button>
                 </div>
-
-                
                 <div className="grid grid-flow-row gap-4 mt-8">
                   <div className="space-y-4 border border-gray-300 rounded-xl">
                     {/* Example Connection */}
