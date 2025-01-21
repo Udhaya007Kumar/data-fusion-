@@ -3,13 +3,16 @@ import { Page } from '../Components/layouts/Sidebar/Page.jsx';
 import { Label } from '../Components/ui/label'
 import { Button } from '../Components/ui/button';
 import { Input } from '../Components/ui/input';
+
 import {
   Select,
   SelectContent,
+  SelectGroup,
   SelectItem,
+  SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "../Components/ui/select"
+} from "../components/ui/select"
 
 import {
   Card,
@@ -73,7 +76,6 @@ const DataSourcemagement = () => {
       <div>
         <div className="flex flex-shrink ">
           <Page />
-
           <div className="w-full min-h-screen mt-4">
             <div className="items-center flex flex-col justify-center mt-12">
               <Card>
@@ -90,12 +92,14 @@ const DataSourcemagement = () => {
                     >
                       DataSource name
                     </Label>
+                   
                     <Input
                       id="dataSourceName"
                       type="text"
                       placeholder="name"
                       className="w-full sm:flex-1"
                     />
+                   
                   </div>
                   <div className="border border-gray-400 p-5 flex gap-6 justify-evenly">
                     <Label
@@ -130,7 +134,6 @@ const DataSourcemagement = () => {
                       placeholder="Username"
                       className="w-full sm:flex-1"
                     />
-
                     <div className="relative">
                       <Input
                         type={isPasswordVisible ? "text" : "password"}
@@ -168,45 +171,47 @@ const DataSourcemagement = () => {
                     >
                       Schemas
                     </Label>
-
-
                     <div className="w-full max-w-2xl mx-auto">
-      <div className="flex flex-wrap gap-2 p-2 border rounded-lg bg-white min-h-[50px]">
-        {tags.map((tag, index) => (
-          <Badge
-            key={index}
-            className="flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full"
-          >
-            <span>{tag}</span>
-            <button
-              onClick={() => removeTag(index)}
-              className="w-4 h-4 flex items-center justify-center rounded-full hover:bg-blue-200"
-            >
-              ×
-            </button>
-          </Badge>
-        ))}
-        <Input
-          ref={inputRef}
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={handleKeyDown}
-           className="flex-1 min-w-[10px] outline-none border-none "
-          placeholder={tags.length === 0 ? "Enter tags..." : ""}
-        />
-      </div>
-      {/* <p className="mt-2 text-sm text-gray-500">
+                      <div className="flex flex-wrap gap-2 p-2 border rounded-lg bg-white min-h-[50px]">
+                        {/* //static tag */}
+                        {/* <Badge className="flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full">
+                    <span>dbt</span>
+                    <button
+                    onClick={() => removeTag(index)}
+                     >
+                        ×
+                    </button>
+                </Badge> */}
+
+                        {tags.map((tag, index) => (
+                          <Badge
+                            key={index}
+                            className="flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full"
+                          >
+                            <span>{tag}</span>
+                            <button
+                              onClick={() => removeTag(index)}
+                              className="w-4 h-4 flex items-center justify-center rounded-full hover:bg-blue-200"
+                            >
+                              ×
+                            </button>
+                          </Badge>
+                        ))}
+                        <Input
+                          ref={inputRef}
+                          type="text"
+                          value={input}
+                          onChange={(e) => setInput(e.target.value)}
+                          onKeyDown={handleKeyDown}
+                          className="flex-1 min-w-[10px] outline-none border-none "
+                          placeholder={tags.length === 0 ? "Enter tags..." : ""}
+                        />
+                      </div>
+                      {/* <p className="mt-2 text-sm text-gray-500">
         Press Enter or comma to add tags
       </p> */}
-    </div>
-
-                    
+                    </div>
                   </div>
-
-
-
-
 
                   <div className="border border-gray-400 p-5 flex gap-6 justify-evenly">
                     <Label
@@ -215,12 +220,30 @@ const DataSourcemagement = () => {
                     >
                       SSH
                     </Label>
-                    <Input
+                    <div className='w-full h-12 '>
+                    <Select >
+      <SelectTrigger className="w-full">
+        <SelectValue placeholder="Do not use SSH credentials" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectGroup>
+          <SelectLabel>Fruits</SelectLabel>
+          <SelectItem value='SSHauthentication'>Working with SSH authentication settings?</SelectItem>
+           <SelectItem value="interface">Trying to disable certain click options or buttons in an interface?</SelectItem>
+          <SelectItem value="securityissue">Dealing with a specific SSH-related security issue?</SelectItem>
+         
+        </SelectGroup>
+      </SelectContent>
+    </Select>
+                    </div>
+                   
+                    {/* <Input
                       id="SSH"
                       type="text"
                       placeholder="Do not use SSH credentials"
                       className="w-full sm:flex-1"
-                    />
+                    /> */}
+
                   </div>
                   <div className="mt-6 border border-gray-400 p-5">
                     <h1 className="font-geist font-medium">
