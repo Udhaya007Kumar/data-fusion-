@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Page } from '../Components/layouts/Sidebar/Page.jsx';
 import { Label } from '../Components/ui/label'
 import { Button } from '../Components/ui/button';
@@ -31,19 +31,37 @@ const DataSourcemagement = () => {
   const [password, setPassword] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
-  const [inputValue, setInputValue] = useState('');
-  const [isBadgeVisible, setIsBadgeVisible] = useState(false);
+  const [tags, setTags] = useState([]);
+  const [input, setInput] = useState('');
+  const inputRef = useRef(null);
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-    setIsBadgeVisible(event.target.value.length > 0);
+  const handleKeyDown = (e) => {
+    // Add tag on Enter or comma
+    if (e.key === 'Enter' || e.key === ',') {
+      e.preventDefault();
+      addTag();
+    }
+    // Remove last tag on Backspace if input is empty
+    else if (e.key === 'Backspace' && input === '' && tags.length > 0) {
+      e.preventDefault();
+      removeTag(tags.length - 1);
+      if (tags.length > 0) {
+        setInput(tags[tags.length - 1]);
+      }
+    }
   };
 
-  const handleCloseBadge = () => {
-    setInputValue('');
-    setIsBadgeVisible(false);
+  const addTag = () => {
+    const trimmedInput = input.trim();
+    if (trimmedInput !== '' && !tags.includes(trimmedInput)) {
+      setTags([...tags, trimmedInput]);
+      setInput('');
+    }
   };
 
+  const removeTag = (index) => {
+    setTags(tags.filter((_, i) => i !== index));
+  };
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
@@ -151,29 +169,45 @@ const DataSourcemagement = () => {
                       Schemas
                     </Label>
 
-                    <div className="flex w-full items-center relative">
-                      <input
-                        type="text"
-                        placeholder="Enter text"
-                        value={inputValue}
-                        onChange={handleInputChange}
-                        className="flex-1 border p-2 rounded-md"
-                      />
-                      {isBadgeVisible && (
-                        <Badge className="absolute left-2 flex items-center p-2">
-                          {inputValue}
 
-                          <button
-                            onClick={handleCloseBadge}
-                            className="ml-2"
-                            aria-label="Close"
-                          >
-                            x
-                          </button>
-                        </Badge>
-                      )}
-                    </div>
+                    <div className="w-full max-w-2xl mx-auto">
+      <div className="flex flex-wrap gap-2 p-2 border rounded-lg bg-white min-h-[50px]">
+        {tags.map((tag, index) => (
+          <Badge
+            key={index}
+            className="flex items-center gap-1 px-3 py-1 bg-blue-100 text-blue-800 rounded-full"
+          >
+            <span>{tag}</span>
+            <button
+              onClick={() => removeTag(index)}
+              className="w-4 h-4 flex items-center justify-center rounded-full hover:bg-blue-200"
+            >
+              ×
+            </button>
+          </Badge>
+        ))}
+        <Input
+          ref={inputRef}
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          onKeyDown={handleKeyDown}
+           className="flex-1 min-w-[10px] outline-none border-none "
+          placeholder={tags.length === 0 ? "Enter tags..." : ""}
+        />
+      </div>
+      {/* <p className="mt-2 text-sm text-gray-500">
+        Press Enter or comma to add tags
+      </p> */}
+    </div>
+
+                    
                   </div>
+
+
+
+
+
                   <div className="border border-gray-400 p-5 flex gap-6 justify-evenly">
                     <Label
                       htmlFor="dataSourceName"
