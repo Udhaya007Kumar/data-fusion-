@@ -218,8 +218,7 @@ const DataSet = () => {
                 <TableHead className="text-left">ID</TableHead>
                 <TableHead className="text-left">user_name</TableHead>
                 <TableHead className="text-left">email</TableHead>
-                <TableHead className="text-left">Role</TableHead>
-                
+                <TableHead className="text-left">Role</TableHead>               
                 <TableHead className="text-left">user_case</TableHead>
                 <TableHead className="text-left">exernal_id</TableHead>
                 

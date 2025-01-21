@@ -361,9 +361,11 @@ const DataSourcemagement = () => {
 
 
 
-    <Button type="submit" className="w-full">
-      Submit
-    </Button>
+<div className="flex items-end justify-end mt-5">
+  <Button type="submit">
+    Connect
+  </Button>
+</div>
   </form>
 </Form>
 
