@@ -205,7 +205,7 @@ const DataSet = () => {
         {/* Header */}
         <div>
           <h1 className="text-2xl font-medium">Users</h1>
-          <p className="text-gray-600">Core user model</p>
+          <p className="text-gray-600">Core user model represending individuals inthe system.Contains user details and their relationships with oraganization,projects,and terms.</p>
           <Separator className="my-5" />
         </div>
 
