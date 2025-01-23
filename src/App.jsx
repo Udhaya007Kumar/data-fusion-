@@ -12,6 +12,8 @@ import NotfoundPage from "./Pages/NotfoundPage";
 import SourceSelection from "./Pages/SourceSelection";
 import DataSourcemagement from "./Pages/DataSourcemagement";
 import DataSet from "./Pages/DataSet";
+import DataSetUser from "./Pages/DataSetUser";
+import Messages from "./Pages/messages";
 
 
 
@@ -32,6 +34,8 @@ function App() {
             <Route path="/sourceselection" element={<SourceSelection/>} />   
             <Route path="/DataSourcemagement" element={<DataSourcemagement/>} />
             <Route path="/dataset" element={<DataSet/>} />
+            <Route path="/datasetuser" element={<DataSetUser/>} />
+            <Route path="/messages" element={<Messages/>} />
                   
             <Route path="*" element={<NotfoundPage />} />
           </Routes>

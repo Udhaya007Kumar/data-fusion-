@@ -67,12 +67,12 @@ const DataSourcemagement = () => {
     password: z.string().nonempty({
       message: "Datasource name is required.",
     }),
-    // DatabaseName: z.string().nonempty({
-    //   message: "Datasource name is required.",
-    // }),
-    Schema: z.string().nonempty({
+    DatabaseName: z.string().nonempty({
       message: "Datasource name is required.",
     }),
+    // Schema: z.string().nonempty({
+    //   message: "Datasource name is required.",
+    // }),
     // ssh: z.string().nonempty({
     //   message: "Datasource name is required.",
     // }),
@@ -138,29 +138,31 @@ const DataSourcemagement = () => {
               <Form {...form}>
   <form onSubmit={form.handleSubmit(onSubmit)} className="">
     
-
-    <div className="border border-gray-400 p-5 flex gap-6 justify-evenly">
-      <Label
-        htmlFor="dataSourceName"
-        className="text-sm font-medium min-w-[120px] mt-2"
-      >
-        DataSource Name
-      </Label>
-      <FormField
-        control={form.control}
-        name="dataSourceName"
-        render={({ field }) => (
-          <FormControl>
-            <Input
-              id="dataSourceName"
-              placeholder="Enter datasource name"
-              className="w-full sm:flex-1"
-              {...field}
-            />
-          </FormControl>
-        )}
-      />
-    </div>
+  <div className="border border-gray-400 p-5 flex gap-6 justify-evenly">
+  <Label
+    htmlFor="dataSourceName"
+    className="text-sm font-medium min-w-[120px] mt-2"
+  >
+    DataSource Name
+  </Label>
+  <FormField
+    control={form.control}
+    name="dataSourceName"
+    render={({ field }) => (
+      <FormControl>
+        <div className="w-full sm:flex-1">
+          <Input
+            id="dataSourceName"
+            placeholder="Enter datasource name"
+            className="w-full"
+            {...field}
+          />
+          {/* <div className="mt-2"><FormMessage /></div> */}
+        </div>
+      </FormControl>
+    )}
+  />
+</div>
 
     <div className="border border-gray-400 p-5 flex gap-6 justify-evenly">
       <Label
@@ -181,6 +183,7 @@ const DataSourcemagement = () => {
               {...field}
             />
           </FormControl>
+          
         )}
       />
       <FormField
@@ -251,18 +254,29 @@ const DataSourcemagement = () => {
 
     <div className="border border-gray-400 p-5 flex gap-6 justify-evenly">
                     <Label
-                      htmlFor="dataSourceName"
+                      htmlFor="DatabaseName"
                       className="text-sm font-medium min-w-[120px] mt-2"
                     >
                       Database name
                     </Label>
-                    <Input
-                    name="DatabaseName"
-                      id="DatabaseName"
-                      type="text"
-                      placeholder="DatabaseName"
-                      className="w-full sm:flex-1"
-                    />
+                    
+                    <FormField
+    control={form.control}
+    name="DatabaseName"
+    render={({ field }) => (
+      <FormControl>
+        <div className="w-full sm:flex-1">
+          <Input
+            id="DatabaseName"
+            placeholder="Enter DatabaseName name"
+            className="w-full"
+            {...field}
+          />
+          {/* <div className="mt-2"><FormMessage /></div> */}
+        </div>
+      </FormControl>
+    )}
+  />
                   </div>
 
                   <div className="border border-gray-400 p-5 flex gap-6 justify-evenly">
@@ -318,7 +332,8 @@ const DataSourcemagement = () => {
           control={form.control}
           name="ssh"
           render={({ field }) => (
-            <Select onValueChange={field.onChange} value={field.value}>
+            <FormControl>
+            <Select onValueChange={field.onChange} value={field.value}>              
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Do not use SSH credentials" />
               </SelectTrigger>
@@ -337,6 +352,7 @@ const DataSourcemagement = () => {
                 </SelectGroup>
               </SelectContent>
             </Select>
+            </FormControl>
           )}
         />
       </div>

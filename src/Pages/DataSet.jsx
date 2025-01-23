@@ -1,246 +1,161 @@
-import React from "react";
-import { Page } from "../Components/layouts/Sidebar/Page.jsx";
-import { Separator } from "../Components/ui/separator";
 
+import { Page } from "../Components/layouts/Sidebar/Page.jsx";
 import {
-  Table,
-  TableBody,
-  TableCaption,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "../Components/ui/table";
+    Table,
+    TableBody,
+    TableCaption,
+    TableCell,
+    TableHead,
+    TableHeader,
+    TableRow,
+  } from "../Components/ui/table";
+import { Link } from 'react-router';
+import { Button } from '../Components/ui/button';
+
+const users = [
+  {
+    "Title": "messages",
+    "LastQueried": "2025-01-23T10:00:00Z",
+    "CreatedAt": "2025-01-13T15:30:00Z",
+    "DataSource": "DataSource A",
+    "Status": "Active",
+    "Owner": "John Doe",
+    "detailPage":"/messages"
+  },
+  {
+    "Title": "chats",
+    "LastQueried": "2025-01-22T12:00:00Z",
+    "CreatedAt": "2025-01-12T14:20:00Z",
+    "DataSource": "DataSource B",
+    "Status": "Inactive",
+    "Owner": "Jane Smith"
+  },
+  {
+    "Title": "users",
+    "LastQueried": "2025-01-21T08:30:00Z",
+    "CreatedAt": "2025-01-11T10:00:00Z",
+    "DataSource": "DataSource C",
+    "Status": "Active",
+    "Owner": "Alice Johnson",
+    "detailPage":"/datasetuser"
+  },
+  {
+    "Title": "pages",
+    "LastQueried": "2025-01-20T09:45:00Z",
+    "CreatedAt": "2025-01-10T09:30:00Z",
+    "DataSource": "DataSource D",
+    "Status": "Pending",
+    "Owner": "Bob Brown"
+  },
+  {
+    "Title": "data_sources",
+    "LastQueried": "2025-01-19T11:15:00Z",
+    "CreatedAt": "2025-01-09T11:10:00Z",
+    "DataSource": "DataSource E",
+    "Status": "Inactive",
+    "Owner": "Charlie Davis"
+  },
+  {
+    "Title": "training_data",
+    "LastQueried": "2025-01-19T11:15:00Z",
+    "CreatedAt": "2025-01-09T11:10:00Z",
+    "DataSource": "DataSource E",
+    "Status": "Inactive",
+    "Owner": "Charlie Davis"
+  },
+  {
+    "Title": "projects",
+    "LastQueried": "2025-01-19T11:15:00Z",
+    "CreatedAt": "2025-01-09T11:10:00Z",
+    "DataSource": "DataSource E",
+    "Status": "Inactive",
+    "Owner": "Charlie Davis"
+  },
+  {
+    "Title": "organizations",
+    "LastQueried": "2025-01-19T11:15:00Z",
+    "CreatedAt": "2025-01-09T11:10:00Z",
+    "DataSource": "DataSource E",
+    "Status": "Inactive",
+    "Owner": "Charlie Davis"
+  },
+  {
+    "Title": "teams",
+    "LastQueried": "2025-01-19T11:15:00Z",
+    "CreatedAt": "2025-01-09T11:10:00Z",
+    "DataSource": "DataSource E",
+    "Status": "Inactive",
+    "Owner": "Charlie Davis"
+  }
+
+  
+]
+
+
 
 const DataSet = () => {
-  // Example user data
-  const users = [
-    {
-      "ID": 1,
-      "user_name": "JohnDoe",
-      "email": "johndoe@example.com",
-      "Role": "Admin",
-      "user_role": "Manager",
-      "user_case": "Case123",
-      "external_id": "EX001"
-    },
-    {
-      "ID": 2,
-      "user_name": "JaneSmith",
-      "email": "janesmith@example.com",
-      "Role": "User",
-      "user_role": "Analyst",
-      "user_case": "Case456",
-      "external_id": "EX002"
-    },
-    {
-      "ID": 3,
-      "user_name": "AliceBrown",
-      "email": "alicebrown@example.com",
-      "Role": "Admin",
-      "user_role": "Supervisor",
-      "user_case": "Case789",
-      "external_id": "EX003"
-    },
-    {
-      "ID": 4,
-      "user_name": "BobJohnson",
-      "email": "bobjohnson@example.com",
-      "Role": "User",
-      "user_role": "Developer",
-      "user_case": "Case101",
-      "external_id": "EX004"
-    },
-    {
-      "ID": 5,
-      "user_name": "CharlieDavis",
-      "email": "charliedavis@example.com",
-      "Role": "Moderator",
-      "user_role": "Engineer",
-      "user_case": "Case202",
-      "external_id": "EX005"
-    },
-    {
-      "ID": 6,
-      "user_name": "EmmaWilson",
-      "email": "emmawilson@example.com",
-      "Role": "User",
-      "user_role": "Analyst",
-      "user_case": "Case303",
-      "external_id": "EX006"
-    },
-    {
-      "ID": 7,
-      "user_name": "DavidClark",
-      "email": "davidclark@example.com",
-      "Role": "Admin",
-      "user_role": "Manager",
-      "user_case": "Case404",
-      "external_id": "EX007"
-    },
-    {
-      "ID": 8,
-      "user_name": "SophiaMartinez",
-      "email": "sophiamartinez@example.com",
-      "Role": "Moderator",
-      "user_role": "Supervisor",
-      "user_case": "Case505",
-      "external_id": "EX008"
-    },
-    {
-      "ID": 9,
-      "user_name": "LiamHarris",
-      "email": "liamharris@example.com",
-      "Role": "User",
-      "user_role": "Engineer",
-      "user_case": "Case606",
-      "external_id": "EX009"
-    },
-    {
-      "ID": 10,
-      "user_name": "OliviaJones",
-      "email": "oliviajones@example.com",
-      "Role": "User",
-      "user_role": "Developer",
-      "user_case": "Case707",
-      "external_id": "EX010"
-    },
-    {
-      "ID": 11,
-      "user_name": "NoahLee",
-      "email": "noahlee@example.com",
-      "Role": "Admin",
-      "user_role": "Manager",
-      "user_case": "Case808",
-      "external_id": "EX011"
-    },
-    {
-      "ID": 12,
-      "user_name": "MiaWalker",
-      "email": "miawalker@example.com",
-      "Role": "User",
-      "user_role": "Supervisor",
-      "user_case": "Case909",
-      "external_id": "EX012"
-    },
-    {
-      "ID": 13,
-      "user_name": "JamesYoung",
-      "email": "jamesyoung@example.com",
-      "Role": "Moderator",
-      "user_role": "Analyst",
-      "user_case": "Case010",
-      "external_id": "EX013"
-    },
-    {
-      "ID": 14,
-      "user_name": "AmeliaHall",
-      "email": "ameliahall@example.com",
-      "Role": "Admin",
-      "user_role": "Engineer",
-      "user_case": "Case111",
-      "external_id": "EX014"
-    },
-    {
-      "ID": 15,
-      "user_name": "EthanAllen",
-      "email": "ethanallen@example.com",
-      "Role": "User",
-      "user_role": "Developer",
-      "user_case": "Case212",
-      "external_id": "EX015"
-    },
-    {
-      "ID": 16,
-      "user_name": "HarperKing",
-      "email": "harperking@example.com",
-      "Role": "Moderator",
-      "user_role": "Manager",
-      "user_case": "Case313",
-      "external_id": "EX016"
-    },
-    {
-      "ID": 17,
-      "user_name": "AvaWright",
-      "email": "avawright@example.com",
-      "Role": "Admin",
-      "user_role": "Supervisor",
-      "user_case": "Case414",
-      "external_id": "EX017"
-    },
-    {
-      "ID": 18,
-      "user_name": "LoganScott",
-      "email": "loganscott@example.com",
-      "Role": "User",
-      "user_role": "Engineer",
-      "user_case": "Case515",
-      "external_id": "EX018"
-    },
-    {
-      "ID": 19,
-      "user_name": "IsabellaGreen",
-      "email": "isabellagreen@example.com",
-      "Role": "Moderator",
-      "user_role": "Analyst",
-      "user_case": "Case616",
-      "external_id": "EX019"
-    },
-    {
-      "ID": 20,
-      "user_name": "LucasBaker",
-      "email": "lucasbaker@example.com",
-      "Role": "Admin",
-      "user_role": "Manager",
-      "user_case": "Case717",
-      "external_id": "EX020"
-    }
-  ]
-  
+    return (
+      <div>
+        <div className="flex flex-shrink">
+          <Page />
 
-  return (
-    <div className="flex">
-      <Page />
-      <div className="mt-7 ml-5 w-full">
-        {/* Header */}
-        <div>
-          <h1 className="text-2xl font-medium">Users</h1>
-          <p className="text-gray-600">Core user model represending individuals inthe system.Contains user details and their relationships with oraganization,projects,and terms.</p>
-          <Separator className="my-5" />
-        </div>
+          <div className="w-full border border-gray-400 p-4 bg-white rounded-md shadow font-geist mt-12">
+            <div className="flex justify-between">
+              <div className="flex  gap-3 font-bold mt-3">
+                <h1>Datasets</h1>
+                <ul className=" flex gap-5 font-geist font-normal">
+                  <li>
+                    <Link>All</Link>
+                  </li>
+                  <li>
+                    <Link>publiched</Link>
+                  </li>
+                  <li>
+                    <Link>Drafts</Link>
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <Button variant="secondary"> + New Dataset</Button>
+              </div>
+            </div>
 
-        {/* Table Section */}
-        <div className="w-full border border-gray-400 p-4 bg-white rounded-md shadow">
-          <Table>
-            <TableCaption>A list of all users in the system</TableCaption>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="text-left">ID</TableHead>
-                <TableHead className="text-left">user_name</TableHead>
-                <TableHead className="text-left">email</TableHead>
-                <TableHead className="text-left">Role</TableHead>               
-                <TableHead className="text-left">user_case</TableHead>
-                <TableHead className="text-left">exernal_id</TableHead>
-                
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {users.map((user) => (
-                <TableRow key={user.ID}>
-                  <TableCell>{user.ID}</TableCell>
-                  <TableCell>{user.user_name}</TableCell>
-                  <TableCell>{user.email}</TableCell>
-                  <TableCell>{user.Role}</TableCell>  
-                  <TableCell>{user.user_case}</TableCell>
-                  <TableCell>{user.external_id}</TableCell>                  
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+            <div className="mt-5 overflow-x-auto">
+              <Table className="min-w-full bg-white border border-gray-300">
+                {/* <TableCaption>A list of your recent invoices.</TableCaption> */}
+                <TableHeader>
+                  <TableRow>
+                    <TableHead >Title</TableHead>
+                    <TableHead className=''>LastQuaried</TableHead>
+                    <TableHead>Crated at</TableHead>
+                    <TableHead>DataSource</TableHead>
+                    <TableHead>Status</TableHead>
+                    <TableHead>Owner</TableHead>                   
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {
+                    users.map((item)=>(
+                      <TableRow key={item.Title}>
+                     <TableCell>
+                     <Link to={item.detailPage} className=" hover:text-blue-400 no-underline ">
+                  {item.Title}
+                </Link>
+                     </TableCell>                     
+                     <TableCell>{item.LastQueried}</TableCell>
+                     <TableCell>{item.CreatedAt}</TableCell>
+                     <TableCell>{item.DataSource}</TableCell>
+                     <TableCell>{item.Status}</TableCell>
+                     <TableCell>{item.Owner}</TableCell>
+                  </TableRow>
+                    ))}
+                </TableBody>
+              </Table>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
 };
 
 export default DataSet;
