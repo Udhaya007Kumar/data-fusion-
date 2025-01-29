@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
     Card,
     CardContent,
@@ -14,6 +14,10 @@ import {
   import { Page } from '../Components/layouts/Sidebar/Page.jsx';
 
 
+import { ReactFlow, Background, BackgroundVariant, Controls } from '@xyflow/react';
+ import BasicReactFlow from './Basicreactflow.jsx';
+
+
 
 
 
@@ -25,6 +29,16 @@ const Home = () => {
         <Page />
         <div className="w-screen  flex flex-col">
           {/* <Navbar /> */}
+          <div>
+            <div className="container mx-auto mt-12 border border-gray-400  h-[400px]">
+            <ReactFlow>
+            
+      <Background color="#ccc" variant={BackgroundVariant.Dots} />
+      <BasicReactFlow /> 
+     <Controls/>
+    </ReactFlow>
+            </div>
+          </div>
           <div className="p-4 container mx-auto flex flex-col gap-6 mt-5 md:flex-row md:gap-6  ">
             <div className="w-full md:w-1/3">
               <Card className="p-4 ">

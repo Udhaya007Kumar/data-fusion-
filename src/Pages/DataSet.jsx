@@ -28,7 +28,8 @@ const users = [
     "CreatedAt": "2025-01-12T14:20:00Z",
     "DataSource": "DataSource B",
     "Status": "Inactive",
-    "Owner": "Jane Smith"
+    "Owner": "Jane Smith",
+    "detailPage":"/chats"
   },
   {
     "Title": "users",

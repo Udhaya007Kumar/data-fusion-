@@ -73,9 +73,9 @@ const DataSourcemagement = () => {
     // Schema: z.string().nonempty({
     //   message: "Datasource name is required.",
     // }),
-    // ssh: z.string().nonempty({
-    //   message: "Datasource name is required.",
-    // }),
+    ssh: z.string().nonempty({
+      message: "Datasource name is required.",
+    }),
 
     
   });
@@ -333,7 +333,13 @@ const DataSourcemagement = () => {
           name="ssh"
           render={({ field }) => (
             <FormControl>
-            <Select onValueChange={field.onChange} value={field.value}>              
+            <Select
+                onValueChange={(value) => {
+                  console.log("Value changed:", value); // Debugging log
+                  field.onChange(value); // Update form state
+                }}
+                value={field.value} // Controlled value
+              >              
               <SelectTrigger className="w-full">
                 <SelectValue placeholder="Do not use SSH credentials" />
               </SelectTrigger>

@@ -1,16 +1,29 @@
 {
-    "files": [],
-    "references": [
-      {
-        "path": "./tsconfig.app.json"
-      },
-      
-    ],
-    "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-        "@/*": ["./src/*"]
-      }
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
     }
-  }
-  
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "jsx": "react-jsx",           // Make sure JSX is set to "react-jsx" for React 17+
+    "target": "es5",              // or "es6" based on your requirements
+    "module": "esnext",           // or "commonjs" based on your setup
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "outDir": "./dist"            // The directory to output the compiled JS
+  },
+  "include": [
+    "src/**/*"                    // Includes all files in the src directory
+  ],
+  "exclude": [
+    "node_modules"                // Excludes node_modules folder
+  ]
+}
