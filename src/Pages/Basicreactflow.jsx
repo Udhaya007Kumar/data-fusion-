@@ -7,7 +7,7 @@ import {
   Background,
 } from "@xyflow/react";
 import "@xyflow/react/dist/style.css";
-import { DatabaseSchemaNode } from "@/components/database-schema-node";
+import { DatabaseSchemaNode } from "../Components/database-schema-node";
 
 
 const initialNodes = [
