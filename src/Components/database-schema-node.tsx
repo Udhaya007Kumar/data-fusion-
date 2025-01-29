@@ -1,6 +1,6 @@
 import { Node, NodeProps, Position } from "@xyflow/react";
 
-import { TableBody, TableCell, TableRow } from "@/components/ui/table";
+import { TableBody, TableCell, TableRow } from "../Components/ui/table";
 
 import { BaseNode } from "@/Components/base-node";
 import { LabeledHandle } from "@/Components/labeled-handle";
