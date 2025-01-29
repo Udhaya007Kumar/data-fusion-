@@ -15,7 +15,6 @@ import DataSet from "./Pages/DataSet";
 import DataSetUser from "./Pages/DataSetUser";
 import Messages from "./Pages/Messages";
 import Chats from "./Pages/Chats";
-import FacilityDetails from "./Pages/FacilityDetails";
 import Basicreactflow from "./Pages/Basicreactflow";
 
 
@@ -41,7 +40,7 @@ function App() {
             <Route path="/datasetuser" element={<DataSetUser/>} />
             <Route path="/messages" element={<Messages/>} />
             <Route path="/chats" element={<Chats/>} />
-            <Route path="/facilityDetails" element={<FacilityDetails/>} />
+            {/* <Route path="/facilityDetails" element={<FacilityDetails/>} /> */}
             <Route path="/basicreactflow" element={<Basicreactflow/>} />
                   
             <Route path="*" element={<NotfoundPage />} />
