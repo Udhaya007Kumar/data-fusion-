@@ -7,7 +7,7 @@ import {
     PaginationPrevious, 
     PaginationNext, 
     PaginationEllipsis 
-  } from '@/components/ui/pagination';
+  } from '../../Components/ui/pagination';
   
 
 const PaginationComponent = ({
