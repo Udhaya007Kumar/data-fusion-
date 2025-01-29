@@ -95,6 +95,10 @@ const data = {
           title: "Billing",
           url: "/DataSourcemagement",
         },
+        {
+          title: "basic react flow",
+          url: "/basicreactflow",
+        }
         
       ],
     }   
